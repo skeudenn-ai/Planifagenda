@@ -1,5 +1,5 @@
 /* Service worker : l'appli démarre même sans réseau. */
-var CACHE = 'agenda-v2;
+var CACHE = 'agenda-v2';
 var ASSETS = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', function (e) {
