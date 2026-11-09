@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Agenda simplifié</title>
+<title>Planifagenda</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
 <meta name="theme-color" content="#0E5A8A">
@@ -710,7 +710,7 @@ function render(){
   var wy=window.scrollY;
   var tabs=TABS.map(function(t){return '<button type="button" role="tab" class="tab" data-act="tab" data-tab="'+t[0]+'" aria-selected="'+(U.tab===t[0])+'">'+t[1]+'</button>'}).join('');
   var lk=S.verrou.actif;
-  var head='<header class="top"><div class="wrap head"><div class="brand"><h1>Agenda simplifié</h1><span class="today">'+esc(cap(fmt(new Date(),{weekday:'long',day:'numeric',month:'long',year:'numeric'})))+'</span></div>'+'<div class="head-r">'+statusHtml()+'<button type="button" class="btn sm" data-act="save">Sauvegarder JSON</button>'+(U.readOnly?'':'<button type="button" class="btn sm" data-act="restore"'+(locked()?' disabled title="Déverrouillez l\'agenda pour restaurer"':'')+'>Restaurer</button>')+'</div></div>'+
+  var head='<header class="top"><div class="wrap head"><div class="brand"><h1>Planifagenda</h1><span class="today">'+esc(cap(fmt(new Date(),{weekday:'long',day:'numeric',month:'long',year:'numeric'})))+'</span></div>'+'<div class="head-r">'+statusHtml()+'<button type="button" class="btn sm" data-act="save">Sauvegarder JSON</button>'+(U.readOnly?'':'<button type="button" class="btn sm" data-act="restore"'+(locked()?' disabled title="Déverrouillez l\'agenda pour restaurer"':'')+'>Restaurer</button>')+'</div></div>'+
     '<div class="wrap"><nav class="tabs" role="tablist" aria-label="Rubriques de l\'agenda">'+tabs+
     '<button type="button" class="tab srch'+(U.search.open?' on':'')+'" data-act="srch" aria-pressed="'+U.search.open+'">'+SEARCH_SVG+'Rechercher</button>'+
     '<button type="button" class="tab lock'+(lk?' on':'')+'" data-act="lock" aria-pressed="'+lk+'">'+(lk?LOCK_SVG:OPEN_SVG)+(lk?'Déverrouiller':'Verrouiller')+'</button></nav></div></header>';
